@@ -1,0 +1,57 @@
+print("=" * 50)
+print("PYTHON STRING AND ARRAY PRACTICE")
+print("=" * 50)
+
+
+# Move Zeros to End
+def pushzerosToEnds(arr):
+    pos = 0
+    for i in range(len(arr)):
+        if arr[i] != 0:
+            arr[pos], arr[i] = arr[i], arr[pos]
+            pos += 1
+    return arr
+
+
+print("\n1. Move Zeros To End")
+print("-" * 30)
+print(pushzerosToEnds([3, 5, 0, 0, 4]))
+================================================================================
+
+# First Non-Repeating Character
+def fornonrepfirstchar(arr):
+    for i in arr:
+        if arr.count(i) == 1:
+            return i
+    return None
+
+
+print("\n2. First Non-Repeating Character")
+print("-" * 30)
+print(fornonrepfirstchar(['a', 'b', 'c', 'c', 'a']))
+==================================================================================================================
+
+# Find Matching Log Line
+def gettxtline(txt, keyword):
+    for line in txt.splitlines():
+        if keyword.lower() in line.lower():
+            return line
+    return None
+
+
+txt = """12-21-2026 9:51am not connecting the database
+12-21-2026 10:15am database connection restored
+12-21-2026 11:30am API timeout issue detected
+12-21-2026 12:00pm API service restarted
+"""
+
+
+print("\n3. Log Search")
+print("-" * 30)
+print(gettxtline(txt, "API timeout issue detected"))
+print(gettxtline(txt, "database connection restored"))
+=======================================================================================================================
+
+print("\n" + "=" * 50)
+print("PROGRAM EXECUTION COMPLETED")
+print("=" * 50)
